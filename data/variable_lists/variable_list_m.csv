@@ -1,0 +1,50 @@
+Variable_name,Variable_short,Exposure,Family
+hs_dde_m,hs_dde,DDE,OCs
+hs_ddt_m,hs_ddt,DDT,OCs
+hs_hcb_m,hs_hcb,HCB,OCs
+hs_pbde47_m,hs_pbde47,PBDE-47,PBDEs
+hs_pbde153_m,hs_pbde153,PBDE-153,PBDEs
+hs_pcb118_m,hs_pcb118,PCB-118,OCs
+hs_pcb138_m,hs_pcb138,PCB-138,OCs
+hs_pcb153_m,hs_pcb153,PCB-153,OCs
+hs_pcb170_m,hs_pcb170,PCB-170,OCs
+hs_pcb180_m,hs_pcb180,PCB-180,OCs
+hs_pfoa_m,hs_pfoa,PFOA,PFAs
+hs_pfna_m,hs_pfna,PFNA,PFAs
+hs_pfunda_m,hs_pfunda,PFUnDA,PFAs
+hs_pfhxs_m,hs_pfhxs,PFHXS,PFAs
+hs_pfos_m,hs_pfos,PFOS,PFAs
+hs_as_m,hs_as,As,Metals
+hs_cd_m,hs_cd,Cd,Metals
+hs_co_m,hs_co,Co,Metals
+hs_cs_m,hs_cs,Cs,Metals
+hs_cu_m,hs_cu,Cu,Metals
+hs_hg_m,hs_hg,Hg,Metals
+hs_mn_m,hs_mn,Mn,Metals
+hs_mo_m,hs_mo,Mo,Metals
+hs_pb_m,hs_pb,Pb,Metals
+hs_mep_m,hs_mep,MEP,Phthalates
+hs_mibp_m,hs_mibp,MiBP,Phthalates
+hs_mnbp_m,hs_mnbp,MnBP,Phthalates
+hs_mbzp_m,hs_mbzp,MBzP,Phthalates
+hs_mehp_m,hs_mehp,MEHP,Phthalates
+hs_mehhp_m,hs_mehhp,MEHHP,Phthalates
+hs_meohp_m,hs_meohp,MEOHP,Phthalates
+hs_mecpp_m,hs_mecpp,MECPP,Phthalates
+hs_ohminp_m,hs_ohminp,ohMINP,Phthalates
+hs_oxominp_m,hs_oxominp,oxo-MINP,Phthalates
+hs_mepa_m,hs_mepa,MEPA,Phenols
+hs_etpa_m,hs_etpa,ETPA,Phenols
+hs_prpa_m,hs_prpa,PRPA,Phenols
+hs_bpa_m,hs_bpa,BPA,Phenols
+hs_bupa_m,hs_bupa,BUPA,Phenols
+hs_oxbe_m,hs_oxbe,OXBE,Phenols
+hs_trcs_m,hs_trcs,TRCS,Phenols
+hs_dmp_m,hs_dmp,DMP,OP Pesticides
+hs_dmtp_m,hs_dmtp,DMTP,OP Pesticides
+hs_dmdtp_m,hs_dmdtp,DMDTP,OP Pesticides
+hs_dep_m,hs_dep,DEP,OP Pesticides
+hs_detp_m,hs_detp,DETP,OP Pesticides
+hs_cotinine_m,hs_cotinine,Cotinine,
+hs_tl_mraw,hs_tl,Tl,Metals
+hs_dedtp_mraw,hs_dedtp,DEDTP,OP Pesticides

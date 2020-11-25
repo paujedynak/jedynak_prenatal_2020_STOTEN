@@ -1,0 +1,18 @@
+Package: PrepareData
+Type: Package
+Title: Prepare SDQ-exposure-covariate data for further processing
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: The package performs several operations on raw datasets in order to prepare them for further analyses. The main functionalities are: recoding of the variables and changing names, fat/creatinine adjustment, log and IQR transformation of exposure concentrations, etc. 
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    forcats,
+    Hmisc,
+    mice,
+    tibble,
+    tidyselect
+RoxygenNote: 7.1.1

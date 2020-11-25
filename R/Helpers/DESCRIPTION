@@ -1,0 +1,15 @@
+Package: Helpers
+Type: Package
+Title: Gathers all helper functions
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: This package gathers functions allowing for small operations on datasets.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    mice,
+    tidyselect
+RoxygenNote: 7.1.1

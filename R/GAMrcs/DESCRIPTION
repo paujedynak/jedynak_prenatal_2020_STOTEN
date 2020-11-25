@@ -1,0 +1,17 @@
+Package: GAMrcs
+Type: Package
+Title: Generalized additive model with restricted cubic splines
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: The package enables fitting GAM to SDQ scores in function of exposure concentrations and plotting the non-linearity plots.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    gam,
+    MASS,
+    rms,
+    stats
+RoxygenNote: 7.1.1

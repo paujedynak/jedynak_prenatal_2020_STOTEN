@@ -1,0 +1,17 @@
+Package: MultipleImputation
+Type: Package
+Title: Multiple imputation using mice algorithm
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: The package allows for data preparation (e.g. fast setting of the passive imputation variables) and for multiple imputation using mice algrithm.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    here,
+    Hmisc,
+    mice,
+    PrepareData
+RoxygenNote: 7.1.1

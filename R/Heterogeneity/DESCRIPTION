@@ -1,0 +1,21 @@
+Package: Heterogeneity
+Type: Package
+Title: Heterogeneity evaluation between strata
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: This package mainly bases on the code of Xavier Basagaña (ISGlobal) and allows for heterogeneity estimated calculation (I²) and plotting of the forest plots.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    here,
+    lme4,
+    MAc,
+    MASS,
+    metafor,
+    metaplus,
+    mice,
+    tidyr
+RoxygenNote: 7.1.1

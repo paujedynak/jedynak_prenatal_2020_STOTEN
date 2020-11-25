@@ -1,0 +1,164 @@
+---
+title: "Prenatal exposure to a wide range of environmental chemicals and child behaviour between 3 and 7 years of age - An exposome-based approach in 5 European cohorts"
+subtitle: "Answer to the Reviewer"
+author: "Jedynak et al."
+date: "2020"
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    keep_tex: yes
+    latex_engine: xelatex
+    template: svm-latex-ms2.tex
+  word_document: default
+biblio-style: apsr
+fontfamily: mathpazo
+fontsize: 11pt
+geometry: margin = 1in
+keywords: Internal exposome, Prenatal exposure, Child behaviour, Strengths and Difficulties Questionnaire, Birth cohort
+bibliography: references.bib
+abstract: "The reviewer asked for additional aanalysis of Elastic Net (ENET) to complement the results of LASSO and ExWAS presented in the submitted manuscript."
+---
+
+
+## **General setup**
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, message = FALSE, warning = FALSE)
+
+# Create a path to save output files
+path_rev <- "results/revision"
+```
+
+
+## **Load packages**
+
+```{r}
+# Load packages
+library(Hmisc)
+library(dplyr)
+library(magrittr)
+library(mice)
+library(PrepareData)
+library(MASS)
+```
+
+
+## **Load datasets**
+
+```{r}
+# Load the imputed dataset
+imp_100_adj_log_iqr_dataset <- readRDS(file = here::here("results/main_analyses/imp_100_adj_log_iqr_dataset.RDS"))
+
+# Select imputed dataset
+imp_100_adj_log_iqr <- imp_100_adj_log_iqr_dataset$imputed_IQR_data
+rm(imp_100_adj_log_iqr_dataset)
+```
+
+
+## **Prepare variable lists**
+
+Manually created lists of compounds, models variables, etc.
+
+```{r}
+# List of adjustment factors used in statistical analyses
+conf_list <- c("cohort", "smoking", "mother_bmi", "mother_age", "mother_edu", "parity", "conception_trim", "mother_work", "child_age", "sex")
+
+# List of exposure variables that will be used for regressions and other analysis, adjusted, log and IQR transformed (ending with _adj_log_iqr)
+variable_list_adj_log_iqr <- readr::read_csv(here::here("data/variable_lists/variable_list_adj_log_iqr.csv"))
+```
+
+
+### ENET analysis
+
+```{r}
+# Create a stacked dataset from the imputed dataset (stack all imputed but do not include original dataset with missing values)
+stacked_dataset_imp_only <- Helpers::Mids2Stacked(input_data = imp_100_adj_log_iqr, 
+                                                  variable_list = variable_list_adj_log_iqr, 
+                                                  include = FALSE)
+```
+
+```{r, cache = TRUE}
+# Define which variables will be forced in the model (their coefficient won't be shrunk)
+penalty_factor <- rep(c(1, 0), times = c(47, 19)) # 47: number of variables to be shrunk (exposures); 19: number of covariate variables (with contrasts added for categorical variables) that will not be shrunk
+
+# SDQ external
+enet_ext <- LassoENET::ENET(input_data = stacked_dataset_imp_only,
+                            sdq = "h_sdq_external",
+                            variable_list = variable_list_adj_log_iqr,
+                            conf_list = conf_list,
+                            penalty_factor = penalty_factor,
+                            path = path_rev,
+                            file_name = "ext_enet_negbin_100imp_Wood")
+
+# SDQ internal
+enet_int <- LassoENET::ENET(input_data = stacked_dataset_imp_only,
+                            sdq = "h_sdq_internal",
+                            variable_list = variable_list_adj_log_iqr,
+                            conf_list = conf_list,
+                            penalty_factor = penalty_factor,
+                            path = path_rev,
+                            file_name = "int_enet_negbin_100imp_Wood")
+```
+
+```{r}
+enet_ext <- readRDS(here::here(path_rev, "ext_enet_negbin_100imp_Wood.rds"))
+enet_int <- readRDS(here::here(path_rev, "int_enet_negbin_100imp_Wood.rds"))
+```
+
+
+```{r}
+# Display which variables exceeded the 50% selection threshold
+
+# SDQ external
+cat("SDQ externalising\n")
+hits_ext <- LassoENET::HitsNumber(regr_result = enet_ext,
+                                  variable_list = variable_list_adj_log_iqr)
+
+# SDQ internal
+cat("SDQ internalising\n")
+hits_int <- LassoENET::HitsNumber(regr_result = enet_int,
+                                  variable_list = variable_list_adj_log_iqr)
+```
+
+```{r}
+# Plot the results (Revision Figure 1)
+
+# SDQ external
+LassoENET::PlotNoHits(no_hits = hits_ext, 
+                      title = "SDQ externalising",
+                      path = path_rev,
+                      file_name = "Revision_Figure_1A")
+
+# SDQ internal
+LassoENET::PlotNoHits(no_hits = hits_int, 
+                      title = "SDQ internalising",
+                      path = path_rev,
+                      file_name = "Revision_Figure_1B")
+```
+
+
+### ExWAS on variables selected by ENET
+
+```{r}
+# Revision Table 1
+# Fit selected variables into a non-penalized model
+Rev_Table_1 <- ExWAS::RunExwasSdqConfounders(input_data = imp_100_adj_log_iqr, 
+                                             sdq = "h_sdq_external", 
+                                             vars_to_regress = dplyr::pull(
+                                               dplyr::filter(
+                                                 hits_ext, number_of_hits >=50), 
+                                               Variable_name),
+                                             variable_names = variable_list_adj_log_iqr,
+                                             conf_list = conf_list, 
+                                             path = path_rev, 
+                                             file_name = "Revision_Table_1")
+```
+
+```{r}
+sessionInfo()
+```
+
+

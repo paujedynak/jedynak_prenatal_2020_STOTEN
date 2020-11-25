@@ -1,0 +1,20 @@
+Package: MultipleRegression
+Type: Package
+Title: Multiple binomial adjusted regression
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: The poackage performs a multiple negative binomial, adjusted regression on a set of given variables and calculates VIF for each variable in the model.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    car,
+    dplyr,
+    Hmisc,
+    MASS,
+    mice,
+    stats,
+    stringr,
+    tidyselect
+RoxygenNote: 7.1.1

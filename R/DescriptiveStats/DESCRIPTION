@@ -1,0 +1,21 @@
+Package: DescriptiveStats
+Type: Package
+Title: Descriptive statistics of studied population
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: The package enables performing a descriptive analysis of all population features: SDQ scores, covariate and exposure variables.
+License: GPL
+Encoding: UTF-8
+Imports:
+    compareGroups,
+    dplyr,
+    here,
+    Rmisc,
+    stats,
+    stringr,
+    tibble,
+    tidyr,
+    tidyselect
+LazyData: true
+RoxygenNote: 7.1.1

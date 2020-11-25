@@ -1,0 +1,19 @@
+Package: LassoENET
+Type: Package
+Title: LASSO or ENET analysis
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: This package allows for performing the adjusted LASSO or ENET analysis of the SDQ score in function of exposure concentrations. 
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    ggplot2,
+    here,
+    magrittr,
+    mpath,
+    stats,
+    tibble
+RoxygenNote: 7.1.1

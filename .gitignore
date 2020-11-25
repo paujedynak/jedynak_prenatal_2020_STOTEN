@@ -1,0 +1,16 @@
+# .Rproj.user
+.Rhistory
+# .RData
+# .Ruserdata
+# .Rbuildignore
+# .Rprofile
+# .drake
+renv
+data/raw_data
+imputed_datasets.RDS
+*.html
+# *.log
+# *.pdf
+# *.tex
+# *.tar.gz
+.Rproj.user

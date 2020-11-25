@@ -1,0 +1,23 @@
+Package: ExWAS
+Type: Package
+Title: Adjusted exposome-wide association study (ExWAS) on SDQ scores in function of different exposures
+Version: 0.1.0
+Author: PJ
+Maintainer: The package maintainer <paulina.jedynak@univ-grenoble-alpes.fr>
+Description: Different types of datasets can be fed to the functions of this package (imputed or not, stratified or not). It also plots regression results.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    broom,
+    dplyr,
+    ggplot2,
+    Helpers,
+    here,
+    MASS,
+    mice,
+    stringr,
+    tibble,
+    tidyr,
+    tidyselect
+RoxygenNote: 7.1.1

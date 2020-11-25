@@ -1,0 +1,7 @@
+"","Variable_name","Family","Exposure","estCI","p_value","p_value_FDR"
+"1","hs_cu_m_log2_iqr","Metals","Cu","0.90 (0.82; 0.98)","0.021","0.112"
+"2","hs_ddt_adj_log2_iqr","OCs","DDT","0.92 (0.84; 1.00)","0.045","0.241"
+"3","hs_pcb138_adj_log2_iqr","OCs","PCB-138","0.88 (0.79; 0.99)","0.035","0.186"
+"4","hs_pfunda_m_log2_iqr","PFASs","PFUnDA","0.92 (0.84; 0.99)","0.035","0.184"
+"5","hs_bpa_adj_log2_iqr","Phenols","BPA","1.06 (1.01; 1.12)","0.028","0.148"
+"6","hs_mnbp_adj_log2_iqr","Phthalates","MnBP","1.06 (1.00; 1.13)","0.048","0.253"

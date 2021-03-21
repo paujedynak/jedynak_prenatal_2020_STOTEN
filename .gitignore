@@ -5,7 +5,7 @@
 # .Rbuildignore
 # .Rprofile
 # .drake
-renv
+# renv
 data/raw_data
 imputed_datasets.RDS
 *.html

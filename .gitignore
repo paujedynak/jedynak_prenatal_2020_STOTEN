@@ -12,5 +12,5 @@ imputed_datasets.RDS
 # *.log
 # *.pdf
 # *.tex
-# *.tar.gz
+ *.tar.gz
 .Rproj.user
